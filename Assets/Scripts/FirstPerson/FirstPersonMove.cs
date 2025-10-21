@@ -8,6 +8,8 @@ public class FirstPersonMove : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed = 5f;
+    public float jumpForce = 3f;
+    public float airControl = 2f;
 
     [Header("Ground Check")]
     public float playerHeight = 2f;
@@ -25,6 +27,7 @@ public class FirstPersonMove : MonoBehaviour
     {
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
+        bool spacebar = Input.GetKeyDown(KeyCode.Space);
 
         Vector3 moveVector = (transform.forward * vInput) + (transform.right * hInput);
 
@@ -41,5 +44,15 @@ public class FirstPersonMove : MonoBehaviour
 
         if (grounded)  // Player is able to walk if grounded
             rb.linearVelocity = new Vector3(moveVector.x, verticalSpeed, moveVector.z);
+        else  // Control the player in the air
+        {
+            Vector3 desiredVecolity = new Vector3(moveVector.x, verticalSpeed, moveVector.z);
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, desiredVecolity, airControl * Time.deltaTime);
+        }
+
+
+        // Jump
+        if (grounded && spacebar)
+            rb.AddForce(Vector3.up * jumpForce);
     }
 }

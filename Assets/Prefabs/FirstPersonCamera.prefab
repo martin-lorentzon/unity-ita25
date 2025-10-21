@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 3191198393807123609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.75554204, z: -0, w: 0.65510017}
-  m_LocalPosition: {x: -0.43, y: 1.43, z: 1.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonMove
   moveSpeed: 5
+  jumpForce: 3
+  airControl: 2
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -179,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 3246940335943871047}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
