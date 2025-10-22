@@ -6,8 +6,7 @@ public class Button : MonoBehaviour
     public new Transform camera;
     public float reach = 4f;
 
-    public UnityEvent onPressed;
-    
+    public UnityEvent onPressed; 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -18,7 +17,6 @@ public class Button : MonoBehaviour
                 onPressed.Invoke();
         }
     }
-
     bool TryPress()
     {
         RaycastHit hitInfo;
