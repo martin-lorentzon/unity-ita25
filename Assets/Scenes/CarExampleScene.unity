@@ -308,6 +308,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8512497267505207012, guid: fd6288aee27e97e4fa3528b6b707dc76, type: 3}
   m_PrefabInstance: {fileID: 1719567775}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &905265624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905265625}
+  m_Layer: 0
+  m_Name: FL_Steering
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &905265625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905265624}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7723403, y: 0.3325348, z: 1.4308449}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9014018507581642805}
+  m_Father: {fileID: 543450652022673822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1011868167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,6 +627,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd6288aee27e97e4fa3528b6b707dc76, type: 3}
+--- !u!1 &1907745804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907745805}
+  m_Layer: 0
+  m_Name: FR_Steering
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907745805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907745804}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.77225184, y: 0.3325348, z: 1.4308449}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 466447174448011665}
+  m_Father: {fileID: 543450652022673822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2090399873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,12 +724,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8864935574950399066}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7722518, y: 0.3325348, z: 1.4308449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652022673822}
+  m_Father: {fileID: 1907745805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652022673822
 Transform:
@@ -682,8 +746,8 @@ Transform:
   m_Children:
   - {fileID: 790872760}
   - {fileID: 4167280742787120207}
-  - {fileID: 9014018507581642805}
-  - {fileID: 466447174448011665}
+  - {fileID: 905265625}
+  - {fileID: 1907745805}
   - {fileID: 7141026939135266210}
   - {fileID: 4326917843548680620}
   m_Father: {fileID: 0}
@@ -759,7 +823,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246decd1631590418f3dd83844b190b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSteering
-  steeringRate: 100
+  turningRadius: 5
+  steeringEmpties:
+  - {fileID: 905265625}
+  - {fileID: 1907745805}
+  visualSteeringAngle: 30
 --- !u!33 &1232468562593331364
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1157,12 +1225,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6869964584125275476}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7723403, y: 0.3325348, z: 1.4308449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652022673822}
+  m_Father: {fileID: 905265625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9096753150016695043
 MeshFilter:
