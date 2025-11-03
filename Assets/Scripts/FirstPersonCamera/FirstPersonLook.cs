@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FirstPersonLook : MonoBehaviour
 {
-    public float sensX = 400f;
-    public float sensY = 400f;
+    public float sensX = 1f;
+    public float sensY = 1f;
 
     public new Transform camera;
     public float eyeHeight = 1f;
@@ -26,8 +26,8 @@ public class FirstPersonLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        float mouseX = Input.GetAxisRaw("Mouse X") * sensX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * sensY;
 
         yRotation += mouseX;  // Rotate around Y-axis (vertical) to look left/right
         xRotation -= mouseY;  // Rotate around X-axis (horizontal) to look up/down
